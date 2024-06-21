@@ -19,7 +19,7 @@ pipeline {
 						}
 			}
 
-			stage ("seq-3") {
+			stage ("seq-4") {
 						steps {
 								echo "this is master branch"
 						}
