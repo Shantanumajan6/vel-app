@@ -21,7 +21,7 @@ pipeline {
 
 			stage ("seq-4") {
 						steps {
-								echo "this is master branch"
+								echo "this is 2024-Q1 branch"
 						}
 			}
 			}
