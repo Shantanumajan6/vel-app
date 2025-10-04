@@ -18,6 +18,7 @@ pipeline {
 			post {
 			    always {
 			           echo "build done"   
+					sleep 10
 			    }
 			    }   
 					
