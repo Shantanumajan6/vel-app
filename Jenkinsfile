@@ -9,7 +9,7 @@ pipeline {
 					steps {
 					
 								echo "hello world"
-								sleep 10
+								sleep 2
 					}
 				}
 				
@@ -18,7 +18,7 @@ pipeline {
 			post {
 			    always {
 			           echo "build done"   
-					sleep 10
+					sleep 2
 			    }
 			    }   
 					
