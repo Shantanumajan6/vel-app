@@ -1,30 +1,38 @@
 pipeline {
 
-	agent any
+	agent {
+
+				label {
+
+						label "built-in"
+						customWorkspace "/mnt/vel-app-1"
+				}	
+	}
 
 	stages {
 
-			stage ("one") {
+			stage ("install httpd") {
 
 					steps {
 
-							echo "repository cloned"
+							sh "yum install httpd -y"
 						}
 			}
 
-		stage ("two") {
+		stage ("start httpd") {
 
 					steps {
 
-							echo "repository cloned"
+							sh "service httpd start"
 						}
 			}
 
-		stage ("three") {
+		stage ("deploy index") {
 
 					steps {
 
-							echo "repository cloned"
+							sh "cp -r index.html /var/www/html/"
+							sh "chmod -R 777 /var/www/html/index.html"
 						}
 			}
 		
