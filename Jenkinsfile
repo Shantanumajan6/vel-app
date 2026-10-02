@@ -16,21 +16,31 @@ pipeline {
 			
 			stages {
 			
-					stage ('install httpd') {
+					stage ("clean-wsp") {
+
+						steps {
+									echo "cleaning wsp"
+									sh "rm -rf *"
+						}
+
+					}
+					stage ('stop httpd') {
 					
 							steps {
-										sh "yum install httpd -y"
+										sh "service httpd stop"
+										sleep 5
 							}	
 					
 					}
-					
-					stage ('start httpd') {
-					
-							steps {
-										sh "service httpd start"
-							}	
-					
-					}
+
+				stage ("delete-old-htmls") {
+
+						steps {
+
+								sh "rm -rf /var/www/html/*"
+
+						}
+				}
 					
 					stage ('deploy htmls') {
 					
