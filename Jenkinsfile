@@ -44,5 +44,14 @@ pipeline {
 							}	
 					
 					}
+
+				stage ('start httpd') {
+					
+							steps {
+										sh "service httpd start"
+										sleep 5
+							}	
+					
+					}
 			}
 }
