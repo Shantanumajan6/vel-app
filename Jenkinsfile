@@ -16,14 +16,7 @@ pipeline {
 			
 			stages {
 			
-					stage ("clean-wsp") {
-
-						steps {
-									echo "cleaning wsp"
-									sh "rm -rf *"
-						}
-
-					}
+					
 					stage ('stop httpd') {
 					
 							steps {
