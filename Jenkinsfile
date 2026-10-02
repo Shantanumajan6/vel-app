@@ -54,4 +54,10 @@ pipeline {
 					
 					}
 			}
+
+	post { 
+        success { 
+            echo 'Deployment done on Apache https server'
+        }
+    }
 }
