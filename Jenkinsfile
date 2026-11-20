@@ -27,7 +27,7 @@ pipeline {
 						
 								steps {
 											sh "sudo cp -r index.html /var/www/html"
-											sh "sudo cp -r dev.html /var/ww/html"
+											sh "sudo cp -r dev.html /var/www/html"
 											sh "sudo chmod -R 777 /var/www/html"
 								}
 						}
